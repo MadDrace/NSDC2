@@ -1,0 +1,194 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  background-color: #fffdd0;
+}
+
+header {
+    background-color: #800000;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    color: #FFFDD0;
+    animation: effect 3s ease-in 2s 1;
+}
+@keyframes effect{
+    from{
+        background-color: lightpink;
+    }
+    to{
+        background-color: #800000;
+    }
+}
+
+header.h1{
+    display: inline;
+}
+
+nav{
+    display: flex; flex-direction: row; justify-content: space-around;
+}
+nav a {
+    background-color: black;
+    color: #FFFDD0;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+nav a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.navbar {
+  max-width: 960px;
+  margin: 10px auto;
+  padding: 0 10px;
+}
+
+img{
+    height: 50px; border-radius: 25px;
+}
+
+.hero {
+  margin-bottom: 22px;
+}
+
+.hero h2 {
+  margin: 0 0 10px;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+}
+
+.hero p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.card {
+  background-color: #9e1919;
+  border: 2px solid black;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #FFFDD0;
+}
+
+.cardord{
+    background-color: #af5f5f;
+    border: 2px solid black;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #FFFDD0;
+}
+
+.card h2,
+.card h3,
+.card h4
+.cardord {
+  font-weight: bold;
+}
+
+.button {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.button.secondary {
+  background-color: #666;
+}
+
+.button.danger {
+  background-color: #999;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.product {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.product h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.product p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.product .price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+
+.table th,
+.table td {
+  border: 2px solid black;
+  padding: 10px;
+  text-align: left;
+  border-radius: 3px;
+}
+
+.table th {
+  background-color: darkmagenta;
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 900px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.message {
+  margin-top: 15px;
+  color: #333;
+}
+
+.footer {
+  text-align: center;
+  color: gray;
+  margin: 30px 0 10px;
+}
+

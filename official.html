@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" ng-app="shopApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official - Simple Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+  <header>
+    <div class="navbar">
+      <h1>Official Dashboard</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="cart.html">Cart ({{cartCount()}})</a>
+        <a href="order.html">Order</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+  <div class="navbar">
+    <div class="card" ng-if="isOfficial()">
+      <h2>Add New Product</h2>
+      <p>Officials can add products that users can buy in the store.</p>
+      <div class="message" ng-if="productMessage">{{productMessage}}</div>
+      <form ng-submit="addProduct()">
+        <div class="form-field">
+          <label>Product name</label>
+          <input type="text" ng-model="newProduct.name" placeholder="Product name">
+        </div>
+        <div class="form-field">
+          <label>Description</label>
+          <textarea ng-model="newProduct.desc" rows="3" placeholder="Short description"></textarea>
+        </div>
+        <div class="form-field">
+          <label>Price</label>
+          <input type="number" ng-model="newProduct.price" placeholder="Price" min="1">
+        </div>
+        <button class="button" type="submit">Add Product</button>
+      </form>
+    </div>
+
+    <div class="card" ng-if="!isOfficial()">
+      <h2>Access denied</h2>
+      <p>This page is only available to officials. Please login as an official to manage products.</p>
+      <a class="button" href="login.html">Go to Login</a>
+    </div>
+
+    <div class="card" ng-if="isOfficial()">
+      <h3>Current Products</h3>
+      <div class="product-list">
+        <div class="product" ng-repeat="product in products">
+          <h4>{{product.name}}</h4>
+          <p>{{product.desc}}</p>
+          <p><strong>${{product.price}}</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">Officials can add or update store products here.</footer>
+</body>
+</html>
