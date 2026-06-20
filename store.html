@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="shopApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store - Simple Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="MainCtrl">
+  <header>
+    <div class="container">
+      <h1>Store</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="cart.html">Cart ({{cartCount()}})</a>
+        <a href="order.html">Order</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <div class="card">
+      <h2>Available Products</h2>
+      <p>Select an item and add it to your cart.</p>
+      <div class="message" ng-if="message">{{message}}</div>
+      <div ng-if="isOfficial()">
+        <a class="button" href="official.html">Manage Products</a>
+      </div>
+      <div ng-if="!isUser()">
+        <p><strong>Note:</strong> Login as a user to add items to the cart.</p>
+      </div>
+    </div>
+    <div class="product-list">
+      <div class="product" ng-repeat="product in products">
+        <h3>{{product.name}}</h3>
+        <p>{{product.desc}}</p>
+        <p><strong>${{product.price}}</strong></p>
+        <button class="button" ng-click="addToCart(product)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">Products are stored in the browser cart using local storage.</footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
